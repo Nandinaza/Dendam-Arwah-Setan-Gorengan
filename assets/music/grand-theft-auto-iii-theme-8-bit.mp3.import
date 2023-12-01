@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/grand-theft-auto-iii-theme-8-bit.mp3-0227a62d7040c5d9fb7d1df7f30f4a63.mp3str"
+
+[deps]
+
+source_file="res://assets/music/grand-theft-auto-iii-theme-8-bit.mp3"
+dest_files=[ "res://.import/grand-theft-auto-iii-theme-8-bit.mp3-0227a62d7040c5d9fb7d1df7f30f4a63.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
