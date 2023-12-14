@@ -1,8 +1,11 @@
 extends Node2D
 
-var scene1 = preload("res://story/level1/level1.tscn")
+var scene1 = preload("res://story/level1/intro.tscn")
 var loading_instance
 onready var timer = $"5sec"
+
+func _ready():
+	$AudioStreamPlayer.play(20.0)
 
 func _on_play_pressed():
 	#get_tree().change_scene("res://story/level1/level1.tscn")

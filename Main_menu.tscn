@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/images/Ui_menu/Button_off/exit.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/Ui_menu/Background.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/Ui_menu/Button_off/play.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/Ui_menu/Button_off/settings.png" type="Texture" id=4]
-[ext_resource path="res://assets/music/grand-theft-auto-iii-theme-8-bit.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/music/granny_bgm.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Main_menu.gd" type="Script" id=9]
+
+[sub_resource type="Theme" id=1]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 9 )
@@ -30,6 +32,7 @@ margin_bottom = 24.0
 margin_right = 306.0
 margin_bottom = 141.0
 size_flags_vertical = 0
+theme = SubResource( 1 )
 icon = ExtResource( 3 )
 flat = true
 icon_align = 1
@@ -53,7 +56,6 @@ icon_align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-autoplay = true
 
 [node name="5sec" type="Timer" parent="."]
 wait_time = 5.0

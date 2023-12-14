@@ -52,8 +52,8 @@ data = PoolVector3Array( 0, 0.0003, 0.0077, 0, -0.0001, 0.007, 0, 0.0003, 0.007,
 [sub_resource type="BoxShape" id=13]
 extents = Vector3( 0.01, 0.01, 0.01 )
 
-[sub_resource type="BoxShape" id=12]
-extents = Vector3( 0.02, 0.02, 0.02 )
+[sub_resource type="ConvexPolygonShape" id=18]
+points = PoolVector3Array( -0.00724011, 0.00359677, 0.00206857, 0.00762579, 0.0411469, 0.0412657, -0.00764668, 0.0411469, 0.0412657, 0.00762579, -0.00114685, 0.00984146, 0.00717708, 0.0390743, 0.0287132, -0.00764668, -0.00055898, 0.0104292, 0.00762579, -0.000265043, -0.000146851, -0.00719798, 0.0390743, 0.0287132, -0.00764668, -0.000265043, -0.000146851, 0.00721922, 0.00359677, 0.00206857, 0.00762579, 0.00531561, 0.0148397, -0.00764668, -0.00114685, 0.00984146, 0.00762579, 0.0411469, 0.040382, 0.00408943, 0.0186473, 0.0133178, -0.00764668, 0.0411469, 0.040382, -0.00764668, 0.00531561, 0.0148397, 0.00762579, -0.00055898, 0.0104292, -0.00219677, 0.0186473, 0.0133178, -0.00710219, 0.00554373, 0.00351309, 0.00708129, 0.00554373, 0.00351309, 0.00737635, 0.000965569, 0.000529506, -0.00739725, 0.000965569, 0.000529506 )
 
 [node name="House_indoor_fan" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
@@ -224,11 +224,9 @@ material/1 = ExtResource( 2 )
 material/2 = ExtResource( 2 )
 material/3 = ExtResource( 2 )
 
-[node name="StaticBody" type="StaticBody" parent="RootNode/Stair" index="0"]
-
-[node name="CollisionShape" type="CollisionShape" parent="RootNode/Stair/StaticBody" index="0"]
-transform = Transform( 1, 0, -1.06581e-14, 0, 1.71433, -0.515038, 0, 1.03007, 0.857167, -1.86265e-09, 0.0147453, -0.00921353 )
-shape = SubResource( 12 )
+[node name="CollisionShape" type="CollisionShape" parent="RootNode" index="18"]
+transform = Transform( 5.96046e-06, -100, -8.9407e-06, 0, -1.19209e-05, 100, -100, -8.9407e-06, 0, -15.8301, -0.552679, -1.55406 )
+shape = SubResource( 18 )
 
 [node name="Tween" type="Tween" parent="." index="1"]
 

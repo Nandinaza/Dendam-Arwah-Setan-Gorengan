@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/granny_bgm.mp3-3fafa2423ba8f10307d3c519351f38c2.mp3str"
+
+[deps]
+
+source_file="res://assets/music/granny_bgm.mp3"
+dest_files=[ "res://.import/granny_bgm.mp3-3fafa2423ba8f10307d3c519351f38c2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

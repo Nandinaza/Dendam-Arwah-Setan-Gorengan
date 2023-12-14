@@ -8,8 +8,10 @@ var kecepatan_jatuh = 10
 func _ready():
 	#if Pergerakan.nama_os == "Android":
 	stk = get_parent().get_node("HBoxContainer/Sprite/TouchScreenButton")
+	
 
 func _physics_process(_delta):
+	
 	if Pergerakan.nama_os == "Windows":
 		velocity = Pergerakan.gerak(velocity,speed)
 	else:
@@ -29,13 +31,14 @@ func _input(event):
 	if OS.get_name() == "Android": #Android
 		if(event is InputEventScreenDrag and event.position.x > 400):
 			self.rotate_y(event.relative.x * -0.01)
-			self.rotate_x(event.relative.y * -0.01)
 	if OS.get_name() == "X11": #Android
 		if(event is InputEventScreenDrag and event.position.x > 400):
 			self.rotate_y(event.relative.x * -0.01)
-			self.rotate_x(event.relative.y * -0.01)
+			#self.rotate_x(event.relative.y * -0.01)
 			
 		self.rotation_degrees.z = 0
 		#$SpringArm.rotation.y = clamp($SpringArm.rotation.y,deg2rad(-60),deg2rad(60))
 	#if event is InputEventMouseMotion:
 	#	$SpringArm.rotate_y(event.relative.x * 0.01)
+
+
