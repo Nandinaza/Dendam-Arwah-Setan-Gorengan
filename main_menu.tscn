@@ -1,0 +1,225 @@
+[gd_scene load_steps=16 format=3 uid="uid://cgwc3qq1h35s5"]
+
+[ext_resource type="Theme" uid="uid://ctduhqpsy3y3u" path="res://Assets/font_and_theme/main_menu.tres" id="1_2kbyc"]
+[ext_resource type="Texture2D" uid="uid://b1wmrfwknaids" path="res://Assets/Image/UI_menu/Button_off/play.png" id="1_77c4o"]
+[ext_resource type="Script" path="res://Script/UI_Interfacec/main_menu.gd" id="1_wcamu"]
+[ext_resource type="Script" path="res://Global/settings.gd" id="2_j5ak7"]
+[ext_resource type="Texture2D" uid="uid://b2yk4wnxtgms2" path="res://Assets/Image/UI_menu/Button_on/play.png" id="2_tg8q7"]
+[ext_resource type="Texture2D" uid="uid://gcvgkab1v51o" path="res://Assets/Image/UI_menu/Button_off/settings.png" id="3_ytetv"]
+[ext_resource type="Texture2D" uid="uid://d1ywiipw865jb" path="res://Assets/Image/UI_menu/Button_on/settings.png" id="4_cm25q"]
+[ext_resource type="Texture2D" uid="uid://bpt071ju3wa1x" path="res://Assets/Image/UI_menu/Button_off/exit.png" id="5_4ry7n"]
+[ext_resource type="Texture2D" uid="uid://c0ue8pq5hyutm" path="res://Assets/Image/UI_menu/Button_on/exit.png" id="6_an13d"]
+[ext_resource type="Texture2D" uid="uid://bcmnwntvspafh" path="res://Assets/Image/Game_Controler/dialog_box.png" id="7_b7w5g"]
+[ext_resource type="LabelSettings" uid="uid://176f77kflqjq" path="res://Assets/font_and_theme/label_normal.tres" id="9_j7h2r"]
+[ext_resource type="AudioStream" uid="uid://b1sjdijegklp7" path="res://Audio/Sound_effect/click.mp3" id="11_57d5a"]
+[ext_resource type="AudioStream" uid="uid://bhxkfiat83sh0" path="res://Audio/Sound_effect/hover.mp3" id="12_edvil"]
+[ext_resource type="AudioStream" uid="uid://b1t87auxue6tr" path="res://Audio/Background_music/572922__clementpanchout__horror-worrying-loop.wav" id="13_sk040"]
+
+[sub_resource type="Resource" id="Resource_7ibcp"]
+script = ExtResource("2_j5ak7")
+sound_effect = 0
+background_music = 0
+sistem_operasi = ""
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wcamu")
+setting_vr = SubResource("Resource_7ibcp")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.172549, 0.141176, 1)
+
+[node name="Mainmenu" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Mainmenu"]
+self_modulate = Color(1, 1, 1, 0.470588)
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Mainmenu/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mainmenu/ColorRect/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("1_2kbyc")
+
+[node name="Play_Button" type="TextureButton" parent="Mainmenu/ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_77c4o")
+texture_pressed = ExtResource("2_tg8q7")
+texture_hover = ExtResource("2_tg8q7")
+
+[node name="Setting_Button" type="TextureButton" parent="Mainmenu/ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_ytetv")
+texture_pressed = ExtResource("4_cm25q")
+texture_hover = ExtResource("4_cm25q")
+
+[node name="Exit_Button" type="TextureButton" parent="Mainmenu/ColorRect/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_4ry7n")
+texture_pressed = ExtResource("6_an13d")
+texture_hover = ExtResource("6_an13d")
+
+[node name="Panel" type="Panel" parent="Mainmenu"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mainmenu/Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 519.0
+offset_top = 620.0
+offset_right = 861.0
+offset_bottom = -11.0
+grow_vertical = 2
+text = "Horror Worrying -Loop by ClementPanchout -- https://freesound.org/s/572922/ -- License: Attribution 4.0"
+
+[node name="Settings_menu" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Settings_menu"]
+custom_minimum_size = Vector2(1100, 550)
+layout_mode = 2
+texture = ExtResource("7_b7w5g")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings_menu/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -15.5
+offset_right = 20.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Background_music" type="Label" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Background music"
+label_settings = ExtResource("9_j7h2r")
+
+[node name="BGM" type="HSlider" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+min_value = -50.0
+max_value = 0.0
+
+[node name="Sound_effect" type="Label" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Sound_effect"
+label_settings = ExtResource("9_j7h2r")
+
+[node name="SFX" type="HSlider" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+min_value = -50.0
+max_value = 0.0
+
+[node name="CheckBox" type="CheckBox" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Full Screen"
+
+[node name="CheckBox2" type="CheckBox" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Android Mode"
+
+[node name="Label" type="Label" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Language: "
+label_settings = ExtResource("9_j7h2r")
+
+[node name="Option_language" type="OptionButton" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Indonesia"
+popup/item_1/id = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Settings_menu/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Click_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_57d5a")
+bus = &"Sound_effect"
+
+[node name="Hover_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_edvil")
+bus = &"Sound_effect"
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_sk040")
+autoplay = true
+bus = &"Background_music"
+
+[node name="Blank" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="mouse_entered" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_mouse_entered"]
+[connection signal="pressed" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Setting_Button" to="." method="_on_setting_button_mouse_entered"]
+[connection signal="pressed" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Setting_Button" to="." method="_on_setting_button_pressed"]
+[connection signal="mouse_entered" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Exit_Button" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="pressed" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="value_changed" from="Settings_menu/NinePatchRect/VBoxContainer/BGM" to="." method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="Settings_menu/NinePatchRect/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="mouse_entered" from="Settings_menu/NinePatchRect/VBoxContainer/CheckBox" to="." method="_on_check_box_mouse_entered"]
+[connection signal="pressed" from="Settings_menu/NinePatchRect/VBoxContainer/CheckBox" to="." method="_on_check_box_pressed"]
+[connection signal="mouse_entered" from="Settings_menu/NinePatchRect/VBoxContainer/CheckBox2" to="." method="_on_check_box_2_mouse_entered"]
+[connection signal="pressed" from="Settings_menu/NinePatchRect/VBoxContainer/CheckBox2" to="." method="_on_check_box_2_pressed"]
+[connection signal="item_selected" from="Settings_menu/NinePatchRect/VBoxContainer/Option_language" to="." method="_on_option_language_item_selected"]
+[connection signal="mouse_entered" from="Settings_menu/NinePatchRect/VBoxContainer/Option_language" to="." method="_on_option_language_mouse_entered"]
+[connection signal="pressed" from="Settings_menu/NinePatchRect/VBoxContainer/Option_language" to="." method="_on_option_language_pressed"]
+[connection signal="mouse_entered" from="Settings_menu/NinePatchRect/VBoxContainer/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Settings_menu/NinePatchRect/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="finished" from="Background_Music" to="." method="_on_background_music_finished"]

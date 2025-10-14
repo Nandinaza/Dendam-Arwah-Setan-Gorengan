@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqke8av00pgcy"]
+
+[ext_resource type="PackedScene" uid="uid://cpqalklbjo84b" path="res://3D_Assets/rumah_galuh.blend" id="1_cq512"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="rumah_galuh" parent="." instance=ExtResource("1_cq512")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.874738, 0.484596, 0, -0.484596, 0.874738, 1.38634, 4.33623, 1.17202)
