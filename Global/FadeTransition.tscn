@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://bybwxthmkpjff"]
+
+[ext_resource type="Script" path="res://Global/FadeTransition.gd" id="1_mn416"]
+[ext_resource type="FontFile" uid="uid://vlgr7jdw7x1j" path="res://Assets/font_and_theme/LGGothic.ttf" id="2_ov3o8"]
+
+[sub_resource type="FontVariation" id="FontVariation_y4q0k"]
+base_font = ExtResource("2_ov3o8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_v1wdb"]
+font_size = 32
+
+[sub_resource type="FontVariation" id="FontVariation_1h8ad"]
+base_font = ExtResource("2_ov3o8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tsqk7"]
+
+[sub_resource type="Animation" id="Animation_51weg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_us3rj"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4yo3"]
+_data = {
+"RESET": SubResource("Animation_51weg"),
+"fade_in": SubResource("Animation_us3rj")
+}
+
+[node name="FadeTransition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mn416")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Tanggal" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_y4q0k")
+text = "DK.Warni"
+label_settings = SubResource("LabelSettings_v1wdb")
+
+[node name="deskripsi" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_1h8ad")
+text = "suatu desa tanpa nama"
+label_settings = SubResource("LabelSettings_tsqk7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k4yo3")
+}

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cpqalklbjo84b"
-path="res://.godot/imported/rumah_galuh.blend-cd344222afa4a2fdf19bbe9f9a70d40d.scn"
+uid="uid://bwuqmvebrs7ev"
+path="res://.godot/imported/key.blend-ea983be907044274959816c948aab4f3.scn"
 
 [deps]
 
-source_file="res://3D_Assets/rumah_galuh.blend"
-dest_files=["res://.godot/imported/rumah_galuh.blend-cd344222afa4a2fdf19bbe9f9a70d40d.scn"]
+source_file="res://3D_Assets/key.blend"
+dest_files=["res://.godot/imported/key.blend-ea983be907044274959816c948aab4f3.scn"]
 
 [params]
 
@@ -24,20 +24,20 @@ meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
-animation/import=false
+animation/import=true
 animation/fps=30
 animation/trimming=false
-animation/remove_immutable_tracks=false
+animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
 gltf/naming_version=1
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1
 blender/nodes/visible=0
-blender/nodes/punctual_lights=false
-blender/nodes/cameras=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
 blender/nodes/custom_properties=true
 blender/nodes/modifiers=1
-blender/meshes/colors=true
+blender/meshes/colors=false
 blender/meshes/uvs=true
 blender/meshes/normals=true
 blender/meshes/tangents=true
