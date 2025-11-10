@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfgsgec65xeqs"]
+
+[ext_resource type="Script" uid="uid://bi2nq5076k1a4" path="res://Template/intractable/Object/toggle_object_tmp.gd" id="1_yx4gw"]
+
+[node name="ToggleObjectTmp" type="Area3D"]
+script = ExtResource("1_yx4gw")

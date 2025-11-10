@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://coth0feoijee8" path="res://Template/Character_template.tscn" id="1_idf66"]
 
 [node name="CharacterTemplate" instance=ExtResource("1_idf66")]
+NamaCharacter = "Galuh"

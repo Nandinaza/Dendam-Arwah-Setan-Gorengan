@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://v6e4o63e3f07"]
+
+[ext_resource type="Script" uid="uid://cf3f45m0lusjs" path="res://Template/intractable/Object/pick_able_item_tmp.gd" id="1_sgbll"]
+
+[node name="PickAbleItemTmp" type="Area3D"]
+script = ExtResource("1_sgbll")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj6dryth3qeb3"]
+
+[ext_resource type="Script" uid="uid://n36pg31f2ea" path="res://Template/intractable/Object/npc_tmp.gd" id="1_nyfyl"]
+
+[node name="NpcTmp" type="Area3D"]
+script = ExtResource("1_nyfyl")

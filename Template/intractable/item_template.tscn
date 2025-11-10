@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dagpwleny6r16"]
-
-[ext_resource type="Script" path="res://Template/script_template/item_template.gd" id="1_twmye"]
-
-[node name="ItemTemplate" type="Area3D"]
-script = ExtResource("1_twmye")

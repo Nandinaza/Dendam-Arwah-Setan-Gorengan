@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bybwxthmkpjff"]
 
-[ext_resource type="Script" path="res://Global/FadeTransition.gd" id="1_mn416"]
+[ext_resource type="Script" uid="uid://d1l3o5showa7n" path="res://Global/FadeTransition.gd" id="1_mn416"]
 [ext_resource type="FontFile" uid="uid://vlgr7jdw7x1j" path="res://Assets/font_and_theme/LGGothic.ttf" id="2_ov3o8"]
 
 [sub_resource type="FontVariation" id="FontVariation_y4q0k"]
@@ -46,8 +46,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k4yo3"]
 _data = {
-"RESET": SubResource("Animation_51weg"),
-"fade_in": SubResource("Animation_us3rj")
+&"RESET": SubResource("Animation_51weg"),
+&"fade_in": SubResource("Animation_us3rj")
 }
 
 [node name="FadeTransition" type="Control"]
@@ -98,5 +98,5 @@ label_settings = SubResource("LabelSettings_tsqk7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_k4yo3")
+&"": SubResource("AnimationLibrary_k4yo3")
 }

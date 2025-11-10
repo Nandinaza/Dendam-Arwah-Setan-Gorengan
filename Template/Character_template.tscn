@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://coth0feoijee8"]
+[gd_scene load_steps=6 format=3 uid="uid://coth0feoijee8"]
 
-[ext_resource type="Script" path="res://Template/script_template/Character_template.gd" id="1_x16ra"]
+[ext_resource type="Script" uid="uid://ckc7edtt04dv7" path="res://Template/script_template/Character_template.gd" id="1_x16ra"]
+[ext_resource type="Texture2D" uid="uid://s7stlqy4aoy" path="res://icon.png" id="2_45ktw"]
+[ext_resource type="FontFile" uid="uid://vlgr7jdw7x1j" path="res://Assets/font_and_theme/LGGothic.ttf" id="2_imj5m"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_k2ww1"]
 
@@ -30,3 +32,35 @@ collide_with_areas = true
 collide_with_bodies = false
 debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 4
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AIM" type="TextureRect" parent="Control/CenterContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("2_45ktw")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="press_to_intract" type="Label" parent="Control/CenterContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_imj5m")
+text = "Press 'E' to intract"

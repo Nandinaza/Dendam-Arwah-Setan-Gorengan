@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://brx6tucfp0rcu"]
+
+[ext_resource type="PackedScene" uid="uid://cfgsgec65xeqs" path="res://Template/intractable/Object/Toggle_Object_Tmp.tscn" id="1_q73xf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gtaqc"]
+size = Vector3(10.20517, 9.45871, 13.941803)
+
+[node name="ToggleObjectTmp" instance=ExtResource("1_q73xf")]
+require_key = true
+require_key_id = 123
+
+[node name="CollisionShape" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046401978, 2.5686493, 3.1726227)
+shape = SubResource("BoxShape3D_gtaqc")

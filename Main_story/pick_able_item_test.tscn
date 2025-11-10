@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkpdit4cxjbo2"]
+
+[ext_resource type="PackedScene" uid="uid://v6e4o63e3f07" path="res://Template/intractable/Object/Pick_able_item_tmp.tscn" id="1_kq2ec"]
+
+[node name="PickAbleItemTmp" instance=ExtResource("1_kq2ec")]
