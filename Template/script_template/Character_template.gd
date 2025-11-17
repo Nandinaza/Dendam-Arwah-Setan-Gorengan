@@ -10,7 +10,10 @@ extends CharacterBody3D
 @onready var current_intractable: Intractable = null
 
 var player_inventory: Dictionary = {}
-@onready var press_to_intract: Label = $Control/CenterContainer/MarginContainer/press_to_intract
+@onready var press_to_intract: Label = $Control/CenterContainer/MarginContainer/prees_to_intract
+@onready var information: Label = $Control/information
+@onready var timer_information: Timer = $Control/Timer
+
 
 var _mouse_input :bool = false
 var _mouse_rotation :Vector3
@@ -24,12 +27,9 @@ var _current_rotation: float
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
-	if event.is_action_pressed("ui_end"):
-		pass
-		#intract()
 
 func _unhandled_input(event):
 	_mouse_input = event is InputEventMouseMotion
@@ -66,9 +66,9 @@ func update_camera(del):
 	_rotation_input = 0.0
 	_tilt_input = 0.0
 func _ready():
+	#press_to_intract = FadeTransition.Label
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	ray_cast_3d.collide_with_bodies = false
-	press_to_intract.hide()
 	
 func _physics_process(delta):
 	check_for_intractable()
@@ -123,7 +123,14 @@ func _on_intractable_lost(intractable: Intractable):
 func _on_intractable_found(intractable: Intractable):
 	press_to_intract.text = intractable.get_promp()
 	press_to_intract.show()
-	
+func show_AIM() -> void:
+	$Control/CenterContainer/TextureRect.visible = true
+func set_information(text_: String):
+	information.text = text_
+	timer_information.start()
+func _on_timer_timeout() -> void:
+	information.text = ""
+
 func add_to_inventory(item_name: String, id: int):
 	player_inventory[str(id)] = item_name
 func has_item(id: int):

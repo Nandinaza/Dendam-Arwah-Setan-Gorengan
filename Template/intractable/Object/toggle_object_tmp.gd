@@ -22,6 +22,7 @@ func _on_intract(player):
 func toggle_objectt():
 	if current_state == State.CLOSE:
 		current_state = State.OPEN
+		FadeTransition.play_fade_out()
 		if animation_player and animation_player.has_animation("open"):
 			animation_player.play("open")
 	else:

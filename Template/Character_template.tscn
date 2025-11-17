@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://coth0feoijee8"]
+[gd_scene load_steps=5 format=3 uid="uid://coth0feoijee8"]
 
 [ext_resource type="Script" uid="uid://ckc7edtt04dv7" path="res://Template/script_template/Character_template.gd" id="1_x16ra"]
-[ext_resource type="Texture2D" uid="uid://s7stlqy4aoy" path="res://icon.png" id="2_45ktw"]
-[ext_resource type="FontFile" uid="uid://vlgr7jdw7x1j" path="res://Assets/font_and_theme/LGGothic.ttf" id="2_imj5m"]
+[ext_resource type="Texture2D" uid="uid://m3nu8txeey10" path="res://Assets/Image/Game_Controler/AIM.png" id="2_imj5m"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_k2ww1"]
 
@@ -40,7 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 layout_mode = 1
@@ -50,17 +49,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AIM" type="TextureRect" parent="Control/CenterContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-texture = ExtResource("2_45ktw")
-expand_mode = 1
-
 [node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer"]
 layout_mode = 2
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_top = 100
 
-[node name="press_to_intract" type="Label" parent="Control/CenterContainer/MarginContainer"]
+[node name="prees_to_intract" type="Label" parent="Control/CenterContainer/MarginContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_imj5m")
-text = "Press 'E' to intract"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_imj5m")
+
+[node name="information" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18800001
+anchor_bottom = 0.24000001
+offset_right = 0.35998535
+offset_bottom = 0.19999695
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Control"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cgwc3qq1h35s5"]
+[gd_scene load_steps=16 format=3 uid="uid://cgwc3qq1h35s5"]
 
 [ext_resource type="Theme" uid="uid://ctduhqpsy3y3u" path="res://Assets/font_and_theme/main_menu.tres" id="1_2kbyc"]
 [ext_resource type="Texture2D" uid="uid://b1wmrfwknaids" path="res://Assets/Image/UI_menu/Button_off/play.png" id="1_77c4o"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://d1ywiipw865jb" path="res://Assets/Image/UI_menu/Button_on/settings.png" id="4_cm25q"]
 [ext_resource type="Texture2D" uid="uid://bpt071ju3wa1x" path="res://Assets/Image/UI_menu/Button_off/exit.png" id="5_4ry7n"]
 [ext_resource type="Texture2D" uid="uid://c0ue8pq5hyutm" path="res://Assets/Image/UI_menu/Button_on/exit.png" id="6_an13d"]
-[ext_resource type="Texture2D" uid="uid://bcmnwntvspafh" path="res://Assets/Image/Game_Controler/dialog_box.png" id="7_b7w5g"]
 [ext_resource type="LabelSettings" uid="uid://176f77kflqjq" path="res://Assets/font_and_theme/label_normal.tres" id="9_j7h2r"]
 [ext_resource type="AudioStream" uid="uid://b1sjdijegklp7" path="res://Audio/Sound_effect/click.mp3" id="11_57d5a"]
 [ext_resource type="AudioStream" uid="uid://bhxkfiat83sh0" path="res://Audio/Sound_effect/hover.mp3" id="12_edvil"]
@@ -117,7 +116,6 @@ grow_vertical = 2
 [node name="NinePatchRect" type="NinePatchRect" parent="Settings_menu"]
 custom_minimum_size = Vector2(1100, 550)
 layout_mode = 2
-texture = ExtResource("7_b7w5g")
 patch_margin_left = 20
 patch_margin_top = 20
 patch_margin_right = 20

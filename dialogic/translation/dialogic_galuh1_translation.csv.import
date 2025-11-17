@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b7batteigfg2a"
+
+[deps]
+
+files=["res://dialogic/translation/dialogic_galuh1_translation.id.translation", "res://dialogic/translation/dialogic_galuh1_translation.en.translation"]
+
+source_file="res://dialogic/translation/dialogic_galuh1_translation.csv"
+dest_files=["res://dialogic/translation/dialogic_galuh1_translation.id.translation", "res://dialogic/translation/dialogic_galuh1_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0
