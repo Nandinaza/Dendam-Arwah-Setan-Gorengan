@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cgwc3qq1h35s5"]
+[gd_scene load_steps=26 format=3 uid="uid://cgwc3qq1h35s5"]
 
 [ext_resource type="Theme" uid="uid://ctduhqpsy3y3u" path="res://Assets/font_and_theme/main_menu.tres" id="1_2kbyc"]
 [ext_resource type="Texture2D" uid="uid://b1wmrfwknaids" path="res://Assets/Image/UI_menu/Button_off/play.png" id="1_77c4o"]
 [ext_resource type="Script" uid="uid://c3lvbdyfmxl0o" path="res://Script/UI_Interfacec/main_menu.gd" id="1_wcamu"]
 [ext_resource type="Script" uid="uid://byxbhta03omvd" path="res://Global/settings.gd" id="2_j5ak7"]
 [ext_resource type="Texture2D" uid="uid://b2yk4wnxtgms2" path="res://Assets/Image/UI_menu/Button_on/play.png" id="2_tg8q7"]
-[ext_resource type="Texture2D" uid="uid://bf87sq0mlllfr" path="res://Assets/rumah_pito.png" id="3_cm266"]
 [ext_resource type="Texture2D" uid="uid://gcvgkab1v51o" path="res://Assets/Image/UI_menu/Button_off/settings.png" id="3_ytetv"]
 [ext_resource type="Texture2D" uid="uid://d1ywiipw865jb" path="res://Assets/Image/UI_menu/Button_on/settings.png" id="4_cm25q"]
 [ext_resource type="Texture2D" uid="uid://bpt071ju3wa1x" path="res://Assets/Image/UI_menu/Button_off/exit.png" id="5_4ry7n"]
@@ -14,9 +13,34 @@
 [ext_resource type="AudioStream" uid="uid://b1sjdijegklp7" path="res://Audio/Sound_effect/click.mp3" id="11_57d5a"]
 [ext_resource type="AudioStream" uid="uid://bhxkfiat83sh0" path="res://Audio/Sound_effect/hover.mp3" id="12_edvil"]
 [ext_resource type="AudioStream" uid="uid://b1t87auxue6tr" path="res://Audio/Background_music/572922__clementpanchout__horror-worrying-loop.wav" id="13_sk040"]
+[ext_resource type="PackedScene" uid="uid://damyvn0dujkj1" path="res://3D_Assets/Rumah_pito/RainEffect/gpu_particles_3d.tscn" id="14_ojb7r"]
+[ext_resource type="PackedScene" uid="uid://bm3u411pbikfr" path="res://3D_Assets/Rumah_pito/rumah_pito.tscn" id="14_w44g7"]
+[ext_resource type="PackedScene" uid="uid://47kyibp5df3q" path="res://3D_Assets/grass/plane_2.tscn" id="15_cm266"]
+[ext_resource type="Material" uid="uid://dmlhqgxsc4dx1" path="res://3D_Assets/Rumah_pito/RainEffect/hujan_particle_proces.tres" id="15_e5qqf"]
+[ext_resource type="RibbonTrailMesh" uid="uid://dpfoh86nb77b1" path="res://3D_Assets/Rumah_pito/RainEffect/hujan_draw_passes.tres" id="16_7bbuq"]
+[ext_resource type="Texture2D" uid="uid://c07io15dmry3c" path="res://3D_Assets/grass/png_tree.png" id="16_g8g3n"]
+[ext_resource type="PlaneMesh" uid="uid://d2mvbydavccx5" path="res://3D_Assets/grass/Bush_plane.tres" id="17_8u0te"]
 
 [sub_resource type="Resource" id="Resource_7ibcp"]
 script = ExtResource("2_j5ak7")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w44g7"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cm266"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.2864355, 0.29255608, 0.3048095, 1)
+sky_cover_modulate = Color(0, 0, 0, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="Sky_g8g3n"]
+sky_material = SubResource("ProceduralSkyMaterial_cm266")
+
+[sub_resource type="Environment" id="Environment_8u0te"]
+background_mode = 2
+sky = SubResource("Sky_g8g3n")
+fog_enabled = true
+fog_light_color = Color(0.31065333, 0.33904132, 0.38320985, 1)
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -35,16 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_cm266")
-
-[node name="Background" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+texture = SubResource("ViewportTexture_w44g7")
 
 [node name="Mainmenu" type="HBoxContainer" parent="."]
 visible = false
@@ -156,14 +171,6 @@ layout_mode = 2
 min_value = -50.0
 max_value = 0.0
 
-[node name="CheckBox" type="CheckBox" parent="Settings_menu/NinePatchRect/VBoxContainer"]
-layout_mode = 2
-text = "Full Screen"
-
-[node name="CheckBox2" type="CheckBox" parent="Settings_menu/NinePatchRect/VBoxContainer"]
-layout_mode = 2
-text = "Android Mode"
-
 [node name="Label" type="Label" parent="Settings_menu/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 text = "Language: "
@@ -210,6 +217,112 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.062
+anchor_top = 0.006
+anchor_right = -0.062000003
+anchor_bottom = 1.0
+offset_left = -0.6398926
+offset_top = -0.32000017
+offset_right = -0.6399994
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="GPUParticles3D" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("14_ojb7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3919487, 9.274455, -12.668371)
+trail_enabled = false
+process_material = ExtResource("15_e5qqf")
+draw_pass_1 = ExtResource("16_7bbuq")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(-0.42243552, -0.08474697, -0.9024225, -0.0075016026, 0.9959123, -0.09001501, 0.906362, -0.031255923, -0.42134434, -3.41, 2, -13.952)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -0.014712562, 0.99989176, 0, -0.99989176, -0.014712562, 0, 14.514067, 0)
+visible = false
+
+[node name="Node3D" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("14_w44g7")]
+
+[node name="lampu" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6961374, 3.2189746, -5.52975)
+light_color = Color(1, 1, 0.5529412, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="lampu2" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0846796, 7.649193, -5.52975)
+light_color = Color(1, 1, 0.5529412, 1)
+light_energy = 3.0
+shadow_enabled = true
+
+[node name="lampu3" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3958068, 8.185385, -1.0816078)
+light_color = Color(1, 1, 0.5529412, 1)
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 3.916208
+
+[node name="lampu4" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1323671, 2.7654943, -1.735348)
+light_color = Color(1, 1, 0.5529412, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Plane2" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("15_cm266")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 2.68, -57.354)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="SubViewportContainer/SubViewport/Node3D/Plane2"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.5118789, 0)
+size = Vector3(2, 0.97624207, 2)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Node3D"]
+environment = SubResource("Environment_8u0te")
+
+[node name="Tress" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D"]
+
+[node name="Tree" type="Sprite3D" parent="SubViewportContainer/SubViewport/Node3D/Tress"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18, 5, -11.31)
+modulate = Color(0.48962224, 0.48962224, 0.48962218, 1)
+texture = ExtResource("16_g8g3n")
+
+[node name="Tree2" type="Sprite3D" parent="SubViewportContainer/SubViewport/Node3D/Tress"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 34.05367, 7.755699, -5.039334)
+modulate = Color(0.49019608, 0.49019608, 0.49019608, 1)
+texture = ExtResource("16_g8g3n")
+
+[node name="Tree3" type="Sprite3D" parent="SubViewportContainer/SubViewport/Node3D/Tress"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.10281, 6.559415, -18.826712)
+modulate = Color(0.49019608, 0.49019608, 0.49019608, 1)
+texture = ExtResource("16_g8g3n")
+
+[node name="Bush" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(-2.8588477e-08, -0.6540282, -0.7564702, 1, -4.371139e-08, 0, -3.3066364e-08, -0.7564702, 0.6540282, 0, 0.6042545, 1.1753554)
+
+[node name="Plane" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D/Bush"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("17_8u0te")
+skeleton = NodePath("")
+
+[node name="Plane2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D/Bush"]
+transform = Transform3D(2.6, -7.1054274e-15, -3.5527137e-15, 7.1054274e-15, 2.6, 2.9127172e-29, 3.5527137e-15, -3.883623e-29, 2.6, 0.16728395, -0.31992453, 1.8079722)
+mesh = ExtResource("17_8u0te")
+skeleton = NodePath("")
+
+[node name="Plane3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D/Bush"]
+transform = Transform3D(2.6, -7.1054274e-15, -3.5527137e-15, 7.1054274e-15, 2.6, 3.883623e-29, 3.5527137e-15, -4.8545288e-29, 2.6, 0.16728407, 1.0517373, 3.394481)
+mesh = ExtResource("17_8u0te")
+skeleton = NodePath("")
+
 [connection signal="mouse_entered" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="mouse_entered" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Setting_Button" to="." method="_on_setting_button_mouse_entered"]
@@ -218,10 +331,6 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Mainmenu/ColorRect/CenterContainer/VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]
 [connection signal="value_changed" from="Settings_menu/NinePatchRect/VBoxContainer/BGM" to="." method="_on_bgm_value_changed"]
 [connection signal="value_changed" from="Settings_menu/NinePatchRect/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
-[connection signal="mouse_entered" from="Settings_menu/NinePatchRect/VBoxContainer/CheckBox" to="." method="_on_check_box_mouse_entered"]
-[connection signal="pressed" from="Settings_menu/NinePatchRect/VBoxContainer/CheckBox" to="." method="_on_check_box_pressed"]
-[connection signal="mouse_entered" from="Settings_menu/NinePatchRect/VBoxContainer/CheckBox2" to="." method="_on_check_box_2_mouse_entered"]
-[connection signal="pressed" from="Settings_menu/NinePatchRect/VBoxContainer/CheckBox2" to="." method="_on_check_box_2_pressed"]
 [connection signal="item_selected" from="Settings_menu/NinePatchRect/VBoxContainer/Option_language" to="." method="_on_option_language_item_selected"]
 [connection signal="mouse_entered" from="Settings_menu/NinePatchRect/VBoxContainer/Option_language" to="." method="_on_option_language_mouse_entered"]
 [connection signal="pressed" from="Settings_menu/NinePatchRect/VBoxContainer/Option_language" to="." method="_on_option_language_pressed"]

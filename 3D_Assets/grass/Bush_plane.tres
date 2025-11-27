@@ -1,0 +1,10 @@
+[gd_resource type="PlaneMesh" load_steps=3 format=3 uid="uid://d2mvbydavccx5"]
+
+[ext_resource type="Texture2D" uid="uid://dw858ejg7em66" path="res://3D_Assets/grass/png_bush.png" id="1_n0pid"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oiatc"]
+transparency = 1
+albedo_texture = ExtResource("1_n0pid")
+
+[resource]
+material = SubResource("StandardMaterial3D_oiatc")

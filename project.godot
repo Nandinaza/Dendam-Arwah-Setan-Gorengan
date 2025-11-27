@@ -104,6 +104,12 @@ folder_colors={
 "res://assets_mentah/": "red"
 }
 
+[importer_defaults]
+
+animation_library={
+&"fbx/importer": 1
+}
+
 [input]
 
 ui_left={
