@@ -23,10 +23,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"galuh": "res://dialogic/karakter/galuh.dch"
+"galuh": "res://dialogic/karakter/galuh.dch",
+"pito": "res://dialogic/karakter/pito.dch"
 }
 directories/dtl_directory={
 "galuh1": "res://dialogic/Kamar_galuh/galuh1.dtl",
+"pito_ulang_tahun_0": "res://dialogic/Rumah_pito_0/pito_ulang_tahun_0.dtl",
 "test": "res://dialogic/test.dtl"
 }
 layout/style_directory={
