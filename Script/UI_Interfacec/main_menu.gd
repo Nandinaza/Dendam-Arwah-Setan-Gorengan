@@ -39,6 +39,8 @@ func setting_toggle():
 #Button Pressed
 func _on_play_button_pressed():
 	audio_stream_player.play()
+	blank.visible = true
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://Main_story/Prologue_0/Ulang_tahun_pito.tscn")
 func _on_setting_button_pressed():
 	setting_toggle()

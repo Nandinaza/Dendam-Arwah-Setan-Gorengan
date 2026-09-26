@@ -24,7 +24,6 @@ var _player_rotation :Vector3
 var _camera_rotation :Vector3
 var _current_rotation: float
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _input(event: InputEvent) -> void:
@@ -36,16 +35,6 @@ func _unhandled_input(event):
 	if _mouse_input:
 		_rotation_input = event.relative.x * 0.3 #sensitifity
 		_tilt_input = event.relative.y * 0.1
-		
-	#Intect item
-	#var area = ray_cast_3d.get_collider()
-	#if area and ray_cast_3d.collide_with_areas and Input.is_action_just_pressed("intract"):
-		#
-		#match area.name:
-			#"kunci_rumah":
-				#print("ketem")
-			#"Exit_area":
-				#print(exp(90))
 
 func update_camera(del):
 	
@@ -65,6 +54,7 @@ func update_camera(del):
 	
 	_rotation_input = 0.0
 	_tilt_input = 0.0
+
 func _ready():
 	#press_to_intract = FadeTransition.Label
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -114,6 +104,7 @@ func check_for_intractable():
 		if current_intractable:
 			_on_intractable_lost(current_intractable)
 			current_intractable = null
+
 func intractable_test(node):
 	if node is Intractable: return node
 	
@@ -125,6 +116,7 @@ func _on_intractable_found(intractable: Intractable):
 	press_to_intract.show()
 func show_AIM() -> void:
 	$Control/CenterContainer/TextureRect.visible = true
+	
 func set_information(text_: String):
 	information.text = text_
 	timer_information.start()

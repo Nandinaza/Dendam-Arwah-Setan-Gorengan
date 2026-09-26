@@ -2,7 +2,7 @@
 
 [sub_resource type="Curve" id="Curve_qy2vq"]
 _limits = [0.0, 0.1, 0.0, 1.0]
-_data = [Vector2(0, 0.023735411), 0.0, 0.0, 0, 0, Vector2(0.23109242, 0), 0.05283641, 0.05283641, 0, 0, Vector2(1, 0.033073932), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.023735411), 0.0, 0.0, 0, 0, Vector2(0.14705881, 0.0066147894), 0.05283641, 0.05283641, 0, 0, Vector2(1, 0.033073932), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmkdx"]

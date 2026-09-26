@@ -88,6 +88,7 @@ translation/locales=["id", "en"]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -182,7 +183,5 @@ locale/translations=PackedStringArray("res://dialogic/translation/dialogic_test_
 
 occlusion_culling/bvh_build_quality=0
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 gl_compatibility/item_buffer_size=8192

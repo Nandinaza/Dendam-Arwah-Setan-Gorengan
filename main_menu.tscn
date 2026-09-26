@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ywiipw865jb" path="res://Assets/Image/UI_menu/Button_on/settings.png" id="4_cm25q"]
 [ext_resource type="Texture2D" uid="uid://bpt071ju3wa1x" path="res://Assets/Image/UI_menu/Button_off/exit.png" id="5_4ry7n"]
 [ext_resource type="Texture2D" uid="uid://c0ue8pq5hyutm" path="res://Assets/Image/UI_menu/Button_on/exit.png" id="6_an13d"]
-[ext_resource type="LabelSettings" uid="uid://176f77kflqjq" path="res://Assets/font_and_theme/label_normal.tres" id="9_j7h2r"]
+[ext_resource type="LabelSettings" uid="uid://cy6ks4uglyiw0" path="res://Assets/font_and_theme/label_Title.tres" id="10_ojb7r"]
 [ext_resource type="AudioStream" uid="uid://b1sjdijegklp7" path="res://Audio/Sound_effect/click.mp3" id="11_57d5a"]
 [ext_resource type="AudioStream" uid="uid://bhxkfiat83sh0" path="res://Audio/Sound_effect/hover.mp3" id="12_edvil"]
 [ext_resource type="AudioStream" uid="uid://b1t87auxue6tr" path="res://Audio/Background_music/572922__clementpanchout__horror-worrying-loop.wav" id="13_sk040"]
@@ -154,7 +154,7 @@ alignment = 1
 [node name="Background_music" type="Label" parent="Settings_menu/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 text = "Background music"
-label_settings = ExtResource("9_j7h2r")
+label_settings = ExtResource("10_ojb7r")
 
 [node name="BGM" type="HSlider" parent="Settings_menu/NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -164,7 +164,7 @@ max_value = 0.0
 [node name="Sound_effect" type="Label" parent="Settings_menu/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 text = "Sound_effect"
-label_settings = ExtResource("9_j7h2r")
+label_settings = ExtResource("10_ojb7r")
 
 [node name="SFX" type="HSlider" parent="Settings_menu/NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -174,7 +174,7 @@ max_value = 0.0
 [node name="Label" type="Label" parent="Settings_menu/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 text = "Language: "
-label_settings = ExtResource("9_j7h2r")
+label_settings = ExtResource("10_ojb7r")
 
 [node name="Option_language" type="OptionButton" parent="Settings_menu/NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -217,6 +217,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Label" type="Label" parent="Blank"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -102.0
+offset_right = 316.0
+offset_bottom = -10.0
+grow_vertical = 0
+text = "Loading"
+label_settings = ExtResource("10_ojb7r")
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -240,7 +253,6 @@ render_target_update_mode = 4
 
 [node name="GPUParticles3D" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("14_ojb7r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3919487, 9.274455, -12.668371)
-trail_enabled = false
 process_material = ExtResource("15_e5qqf")
 draw_pass_1 = ExtResource("16_7bbuq")
 
