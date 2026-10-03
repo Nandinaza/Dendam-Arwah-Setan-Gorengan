@@ -1,12 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://c5iccr5lk3787"]
+[gd_scene load_steps=24 format=3 uid="uid://c5iccr5lk3787"]
 
 [ext_resource type="Script" uid="uid://bsl226epjf27w" path="res://Script/Level_script/Prologue/ulang_tahun_pito.gd" id="1_jskm2"]
-[ext_resource type="PackedScene" uid="uid://bm3u411pbikfr" path="res://3D_Assets/Rumah_pito/rumah_pito.tscn" id="1_sp351"]
 [ext_resource type="PackedScene" uid="uid://qq2ggd60b21r" path="res://Template/Character/Galuh_playable.tscn" id="2_rviof"]
-[ext_resource type="PackedScene" uid="uid://b3md7v0rkqpnb" path="res://3D_Assets/Interior/Meja/meja.glb" id="3_84y3p"]
-[ext_resource type="PackedScene" uid="uid://cci2ym0yng8m0" path="res://3D_Assets/Interior/Kue/kue_pito.glb" id="5_dr543"]
-[ext_resource type="PackedScene" uid="uid://csjcr4c1iph4a" path="res://Main_story/Prologue_0/kue_pito_intractable.tscn" id="6_iym6t"]
-[ext_resource type="Resource" uid="uid://c6w4gxxpokvei" path="res://dialogic/Rumah_pito_0/pito_ulang_tahun_0.dtl" id="7_jplbu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rviof"]
 size = Vector3(13.3133545, 0.13467407, 7.7783203)
@@ -73,14 +68,9 @@ emission = Color(1, 1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rviof"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_niw1p"]
-size = Vector3(1.9420471, 1.1174331, 1.9419122)
-
 [node name="UlangTahunPito" type="Node3D" node_paths=PackedStringArray("character")]
 script = ExtResource("1_jskm2")
 character = NodePath("CharacterTemplate")
-
-[node name="Node3D" parent="." instance=ExtResource("1_sp351")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 4
@@ -173,16 +163,3 @@ mesh = SubResource("BoxMesh_rviof")
 [node name="OmniLight3D" type="OmniLight3D" parent="Glass"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5392587, 3.6661777, -1.4171071)
 light_energy = 0.5
-
-[node name="meja" parent="." instance=ExtResource("3_84y3p")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.3551993, 0.81194174, -1.9361794)
-
-[node name="kue_pito" parent="." instance=ExtResource("5_dr543")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.2545106, 0.87875986, -1.9350816)
-
-[node name="PickAbleItemTmp" parent="kue_pito" instance=ExtResource("6_iym6t")]
-dialog_DLG = ExtResource("7_jplbu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="kue_pito/PickAbleItemTmp"]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.50898194, 0)
-shape = SubResource("BoxShape3D_niw1p")

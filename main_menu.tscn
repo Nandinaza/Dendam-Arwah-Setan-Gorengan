@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cgwc3qq1h35s5"]
+[gd_scene load_steps=25 format=3 uid="uid://cgwc3qq1h35s5"]
 
 [ext_resource type="Theme" uid="uid://ctduhqpsy3y3u" path="res://Assets/font_and_theme/main_menu.tres" id="1_2kbyc"]
 [ext_resource type="Texture2D" uid="uid://b1wmrfwknaids" path="res://Assets/Image/UI_menu/Button_off/play.png" id="1_77c4o"]
@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://bhxkfiat83sh0" path="res://Audio/Sound_effect/hover.mp3" id="12_edvil"]
 [ext_resource type="AudioStream" uid="uid://b1t87auxue6tr" path="res://Audio/Background_music/572922__clementpanchout__horror-worrying-loop.wav" id="13_sk040"]
 [ext_resource type="PackedScene" uid="uid://damyvn0dujkj1" path="res://3D_Assets/Rumah_pito/RainEffect/gpu_particles_3d.tscn" id="14_ojb7r"]
-[ext_resource type="PackedScene" uid="uid://bm3u411pbikfr" path="res://3D_Assets/Rumah_pito/rumah_pito.tscn" id="14_w44g7"]
 [ext_resource type="PackedScene" uid="uid://47kyibp5df3q" path="res://3D_Assets/grass/plane_2.tscn" id="15_cm266"]
 [ext_resource type="Material" uid="uid://dmlhqgxsc4dx1" path="res://3D_Assets/Rumah_pito/RainEffect/hujan_particle_proces.tres" id="15_e5qqf"]
 [ext_resource type="RibbonTrailMesh" uid="uid://dpfoh86nb77b1" path="res://3D_Assets/Rumah_pito/RainEffect/hujan_draw_passes.tres" id="16_7bbuq"]
@@ -262,33 +261,6 @@ transform = Transform3D(-0.42243552, -0.08474697, -0.9024225, -0.0075016026, 0.9
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
 transform = Transform3D(1, 0, 0, 0, -0.014712562, 0.99989176, 0, -0.99989176, -0.014712562, 0, 14.514067, 0)
 visible = false
-
-[node name="Node3D" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("14_w44g7")]
-
-[node name="lampu" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6961374, 3.2189746, -5.52975)
-light_color = Color(1, 1, 0.5529412, 1)
-light_energy = 1.2
-shadow_enabled = true
-
-[node name="lampu2" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0846796, 7.649193, -5.52975)
-light_color = Color(1, 1, 0.5529412, 1)
-light_energy = 3.0
-shadow_enabled = true
-
-[node name="lampu3" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3958068, 8.185385, -1.0816078)
-light_color = Color(1, 1, 0.5529412, 1)
-light_energy = 3.0
-shadow_enabled = true
-omni_range = 3.916208
-
-[node name="lampu4" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1323671, 2.7654943, -1.735348)
-light_color = Color(1, 1, 0.5529412, 1)
-light_energy = 1.2
-shadow_enabled = true
 
 [node name="Plane2" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("15_cm266")]
 transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 2.68, -57.354)

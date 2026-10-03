@@ -1,0 +1,21 @@
+// awalan
+
+untuk folder grass dan rumah pito biarkan saja karena banyak file penting, yang saya malas jika di utak atik
+
+// Godot
+
+catatan ini untuk depeloper
+saya akan setujui aturan ini supaya manajemen 3D file tidak berantakan
+
+ada dua folder yaitu 3D bake dan 3D model
+
+3D model menyimpan model mentah berupa dae, gltf, atau fbx.
+tetapi di prioritaskan fbx file
+
+3D bake menyimpan hasil 'bake' dari model mentah tadi jadi filenya dalam bentuk scene
+
+file image-texture harus sekecil mungkin dan berada dalam folder 3D model
+
+// Blender
+
+pada blender pastikan default texture ada di ../ image-texture
